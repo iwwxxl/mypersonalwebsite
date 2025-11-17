@@ -1,185 +1,76 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>iwwxxl</title>
-  <meta name="description" content="dogge" />
-  
-  <!-- 暗黑模式 + 现代字体 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #1a1a1a;
-      --accent: #2563eb;
-      --card: #f8f9fa;
-      --border: #e5e7eb;
-    }
-    [data-theme="dark"] {
-      --bg: #0f0f0f;
-      --text: #e4e4e7;
-      --accent: #3b82f6;
-      --card: #1a1a1a;
-      --border: #27272a;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      transition: all 0.3s ease;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin: 0 auto 1.5rem;
-      background: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      color: white;
-      font-weight: bold;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, var(--accent), #10b981);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .tagline {
-      color: #6b7280;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin: 2rem 0;
-    }
-    .links a {
-      padding: 0.75rem 1.5rem;
-      background: var(--card);
-      color: var(--text);
-      text-decoration: none;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      transition: all 0.2s;
-      font-weight: 500;
-    }
-    .links a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      border-color: var(--accent);
-    }
-    .social {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 2rem;
-      font-size: 1.5rem;
-    }
-    .social a {
-      color: #6b7280;
-      transition: color 0.2s;
-    }
-    .social a:hover { color: var(--accent); }
-    .theme-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 1.2rem;
-    }
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      color: #9ca3af;
-      font-size: 0.9rem;
-    }
-    @media (max-width: 640px) {
-      h1 { font-size: 2rem; }
-      .container { padding: 1rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 - Index</title>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 32px;
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-  <div class="theme-toggle" onclick="toggleTheme()">Dark Mode</div>
-  
-  <div class="container">
-    <header>
-      <div class="avatar">张</div>
-      <h1>张三</h1>
-      <p class="tagline">设计师 / 开发者 / 独立创作者</p>
-      <p>用代码与设计，记录成长与思考。</p>
-    </header>
-
-    <nav class="links">
-      <a href="/blog">博客</a>
-      <a href="/projects">项目</a>
-      <a href="/about">关于</a>
-      <a href="mailto:hi@zhangsan.com">邮件</a>
-    </nav>
-
-    <div class="social">
-      <a href="https://github.com/iwwxxl" target="_blank">GitHub</a>
-      <a href="https://twitter.com" target="_blank">Twitter</a>
-      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    <div class="container">
+        <h1>欢迎来到我的网站</h1>
+        <p>这是一个简洁现代的单页首页模板，适合快速搭建个人或项目主页。</p>
+        <a href="#" class="btn">开始探索</a>
+        <footer>&copy; 2025 你的名字. All rights reserved.</footer>
     </div>
-
-    <footer>
-      © 2025 张三 | 部署于 <a href="https://pages.cloudflare.com" style="color:var(--accent)">Cloudflare Pages</a>
-    </footer>
-  </div>
-
-  <script>
-    // 暗黑模式切换
-    function toggleTheme() {
-      const body = document.body;
-      const current = body.getAttribute('data-theme');
-      const newTheme = current === 'dark' ? 'light' : 'dark';
-      body.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      document.querySelector('.theme-toggle').textContent = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
-    }
-
-    // 加载保存的主题
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      document.body.setAttribute('data-theme', saved);
-      document.querySelector('.theme-toggle').textContent = saved === 'dark' ? 'Light Mode' : 'Dark Mode';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.body.setAttribute('data-theme', 'dark');
-      document.querySelector('.theme-toggle').textContent = 'Light Mode';
-    }
-  </script>
 </body>
 </html>

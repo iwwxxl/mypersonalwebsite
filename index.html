@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的导航页</title>
+    <title>我的导航</title>
     <style>
         * {
             margin: 0;
@@ -12,139 +11,140 @@
             box-sizing: border-box;
         }
 
-```
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
-    
-    .container {
-        max-width: 900px;
-        width: 100%;
-    }
-    
-    h1 {
-        text-align: center;
-        color: white;
-        font-size: 2.5rem;
-        margin-bottom: 50px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    }
-    
-    .nav-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-    }
-    
-    .nav-item {
-        background: white;
-        border-radius: 15px;
-        padding: 30px;
-        text-decoration: none;
-        color: #333;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .nav-item::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, #667eea, #764ba2);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-    }
-    
-    .nav-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-    
-    .nav-item:hover::before {
-        transform: scaleX(1);
-    }
-    
-    .nav-icon {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-        display: block;
-    }
-    
-    .nav-title {
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 10px;
-        color: #2c3e50;
-    }
-    
-    .nav-desc {
-        font-size: 0.9rem;
-        color: #7f8c8d;
-        line-height: 1.5;
-    }
-    
-    @media (max-width: 768px) {
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 30px;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
-        
-        .nav-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
-```
 
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            color: #333;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        .nav-list {
+            padding: 20px;
+        }
+
+        .nav-item {
+            margin-bottom: 16px;
+        }
+
+        .nav-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .nav-item a {
+            display: block;
+            padding: 18px 24px;
+            background: #f8f9fa;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item a:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+            background: #667eea;
+            color: white;
+        }
+
+        .nav-item a::after {
+            content: "→";
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item a:hover::after {
+            right: 18px;
+            opacity: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #aaa;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.9rem;
+            }
+            .nav-item a {
+                padding: 20px;
+                font-size: 1.05rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>🌟 我的导航中心</h1>
-        <div class="nav-grid">
-            <a href="https://www.google.com" class="nav-item" target="_blank">
-                <span class="nav-icon">🔍</span>
-                <div class="nav-title">搜索引擎</div>
-                <div class="nav-desc">快速搜索互联网上的各种信息和资源</div>
-            </a>
+        <header>
+            <h1>我的导航</h1>
+            <p>简约 · 高效 · 常用站点</p>
+        </header>
 
-```
-        <a href="https://github.com" class="nav-item" target="_blank">
-            <span class="nav-icon">💻</span>
-            <div class="nav-title">代码仓库</div>
-            <div class="nav-desc">全球最大的代码托管平台和开源社区</div>
-        </a>
-        
-        <a href="https://www.youtube.com" class="nav-item" target="_blank">
-            <span class="nav-icon">📺</span>
-            <div class="nav-title">视频平台</div>
-            <div class="nav-desc">观看和分享各类视频内容</div>
-        </a>
-        
-        <a href="https://mail.google.com" class="nav-item" target="_blank">
-            <span class="nav-icon">✉️</span>
-            <div class="nav-title">电子邮箱</div>
-            <div class="nav-desc">管理和收发电子邮件</div>
-        </a>
-        
-        <a href="https://www.notion.so" class="nav-item" target="_blank">
-            <span class="nav-icon">📝</span>
-            <div class="nav-title">笔记工具</div>
-            <div class="nav-desc">记录想法、管理任务和知识库</div>
-        </a>
+        <div class="nav-list">
+            <div class="nav-item">
+                <a href="https://www.google.com" target="_blank">Google 搜索</a>
+            </div>
+            <div class="nav-item">
+                <a href="https://github.com" target="_blank">GitHub</a>
+            </div>
+            <div class="nav-item">
+                <a href="https://mail.qq.com" target="_blank">QQ 邮箱</a>
+            </div>
+            <div class="nav-item">
+                <a href="https://translate.google.com" target="_blank">Google 翻译</a>
+            </div>
+            <div class="nav-item">
+                <a href="https://www.bilibili.com" target="_blank">bilibili</a>
+            </div>
+            <!-- 你可以继续加，或者删减到你想要的数量 -->
+        </div>
+
+        <footer>
+            © 2025 你的名字 / 昵称
+        </footer>
     </div>
-</div>
-```
-
 </body>
 </html>

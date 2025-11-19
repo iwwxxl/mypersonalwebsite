@@ -1,76 +1,150 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>首页 - Index</title>
+    <title>我的导航页</title>
     <style>
-        /* 基础样式 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #333;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .container {
-            max-width: 800px;
-            width: 90%;
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center;
-            padding: 40px 20px;
-        }
+
+```
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    .container {
+        max-width: 900px;
+        width: 100%;
+    }
+    
+    h1 {
+        text-align: center;
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    
+    .nav-item {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        text-decoration: none;
+        color: #333;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .nav-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .nav-item:hover::before {
+        transform: scaleX(1);
+    }
+    
+    .nav-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        display: block;
+    }
+    
+    .nav-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #2c3e50;
+    }
+    
+    .nav-desc {
+        font-size: 0.9rem;
+        color: #7f8c8d;
+        line-height: 1.5;
+    }
+    
+    @media (max-width: 768px) {
         h1 {
-            font-size: 2.8rem;
-            margin-bottom: 16px;
-            color: #2c3e50;
-            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 30px;
         }
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 32px;
-            color: #555;
+        
+        .nav-grid {
+            grid-template-columns: 1fr;
         }
-        .btn {
-            display: inline-block;
-            padding: 12px 32px;
-            background: #3498db;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-        }
-        .btn:hover {
-            background: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
-        }
-        footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #777;
-        }
-    </style>
+    }
+</style>
+```
+
 </head>
 <body>
     <div class="container">
-        <h1>欢迎来到我的网站</h1>
-        <p>这是一个简洁现代的单页首页模板，适合快速搭建个人或项目主页。</p>
-        <a href="#" class="btn">开始探索</a>
-        <footer>&copy; 2025 iwwxxl. All rights reserved.</footer>
+        <h1>🌟 我的导航中心</h1>
+        <div class="nav-grid">
+            <a href="https://www.google.com" class="nav-item" target="_blank">
+                <span class="nav-icon">🔍</span>
+                <div class="nav-title">搜索引擎</div>
+                <div class="nav-desc">快速搜索互联网上的各种信息和资源</div>
+            </a>
+
+```
+        <a href="https://github.com" class="nav-item" target="_blank">
+            <span class="nav-icon">💻</span>
+            <div class="nav-title">代码仓库</div>
+            <div class="nav-desc">全球最大的代码托管平台和开源社区</div>
+        </a>
+        
+        <a href="https://www.youtube.com" class="nav-item" target="_blank">
+            <span class="nav-icon">📺</span>
+            <div class="nav-title">视频平台</div>
+            <div class="nav-desc">观看和分享各类视频内容</div>
+        </a>
+        
+        <a href="https://mail.google.com" class="nav-item" target="_blank">
+            <span class="nav-icon">✉️</span>
+            <div class="nav-title">电子邮箱</div>
+            <div class="nav-desc">管理和收发电子邮件</div>
+        </a>
+        
+        <a href="https://www.notion.so" class="nav-item" target="_blank">
+            <span class="nav-icon">📝</span>
+            <div class="nav-title">笔记工具</div>
+            <div class="nav-desc">记录想法、管理任务和知识库</div>
+        </a>
     </div>
+</div>
+```
+
 </body>
 </html>
